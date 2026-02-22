@@ -5,4 +5,6 @@ line-number = "relative"
 cursorline = true
 bufferline = "multiple"
 true-color = true
+auto-format = true
+
 
