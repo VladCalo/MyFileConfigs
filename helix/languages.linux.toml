@@ -1,0 +1,79 @@
+################################
+# C / C++
+################################
+
+[[language]]
+name = "c"
+auto-format = true
+formatter = { command = "clang-format" }
+language-servers = ["clangd"]
+
+[[language]]
+name = "cpp"
+auto-format = true
+formatter = { command = "clang-format" }
+language-servers = ["clangd"]
+
+[language-server.clangd]
+command = "clangd"
+args = [
+  "--background-index",
+  "--clang-tidy",
+  "--completion-style=detailed",
+  "--header-insertion=iwyu",
+  "--query-driver=/usr/bin/gcc,/usr/bin/g++,/usr/bin/*-gcc,/usr/bin/*-g++"
+]
+
+################################
+# Go
+################################
+
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "gofmt" }
+language-servers = ["gopls"]
+
+[language-server.gopls]
+command = "gopls"
+config = { analyses = { unusedparams = true }, staticcheck = true }
+
+################################
+# Python
+################################
+
+[[language]]
+name = "python"
+auto-format = true
+formatter = { command = "python3", args = ["-m", "black", "-"] }
+language-servers = ["pyright"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+################################
+# Rust
+################################
+
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = ["rust-analyzer"]
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+################################
+# YAML
+################################
+
+[[language]]
+name = "yaml"
+auto-format = true
+language-servers = ["yaml-language-server"]
+
+[language-server.yaml-language-server]
+command = "yaml-language-server"
+args = ["--stdio"]
+
