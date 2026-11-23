@@ -1,4 +1,5 @@
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 alias k='kubectl'
 alias v='nvim'
@@ -6,7 +7,6 @@ alias vi='nvim'
 alias vim='nvim'
 alias kc='kubectx'
 alias kns='kubens'
-alias z='zoxide'
 alias l='eza'
 alias gall='git fetch --prune && git pull --rebase'
 alias gs='git status'
